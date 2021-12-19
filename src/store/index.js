@@ -1,5 +1,4 @@
-import react, { createContext, useReducer } from "react";
-import { Switch } from "react-router-dom/cjs/react-router-dom.min";
+import { createContext, useReducer } from "react";
 
 const initialState = {
     popular: []
