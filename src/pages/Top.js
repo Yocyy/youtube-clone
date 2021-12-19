@@ -12,7 +12,7 @@ export const Top = () => {
             console.log('data', res);
             setGlobalState({ type: 'SET_POPULAR', payload: { popular: res.data.items } })
         });
-    }, []);
+    }, [setGlobalState]);
     return (
         <Layout>
             <VideoGrid>
@@ -22,7 +22,7 @@ export const Top = () => {
                             <VideoGridItem
                                 id={popular.id}
                                 key={popular.id}
-                                src={popular.snippet.thumbnails.default.url}
+                                src={popular.snippet.thumbnails.high.url}
                                 title={popular.snippet.title}
                             />
                         )
