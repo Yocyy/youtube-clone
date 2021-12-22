@@ -17,11 +17,7 @@ const params = {
 export const fetchPopularData = async () => {
     return await youtube.get('/videos', {
         params: {
-            part: 'snippet',
-            maxResults: 40,
-            key: KEY,
-            regionCode: 'JP',
-            type: 'video',
+            ...params,
             chart: 'mostPopular'
         }
     });
