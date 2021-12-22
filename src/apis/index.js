@@ -12,7 +12,6 @@ const params = {
     key: KEY,
     regionCode: 'JP',
     type: 'video',
-    chart: 'mostPopular'
 }
 
 export const fetchPopularData = async () => {
@@ -28,11 +27,11 @@ export const fetchPopularData = async () => {
     });
 }
 
-export const feachSelectedData = async (v) => {
+export const feachSelectedData = async (id) => {
     return await youtube.get('videos', {
         params: {
             ...params,
-            v
+            id
         }
     })
 }
