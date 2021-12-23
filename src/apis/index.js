@@ -20,7 +20,7 @@ export const fetchPopularData = async () => {
             ...params,
             chart: 'mostPopular'
         }
-    });
+    })
 }
 
 export const feachSelectedData = async (id) => {
@@ -28,6 +28,15 @@ export const feachSelectedData = async (id) => {
         params: {
             ...params,
             id
+        }
+    })
+}
+
+export const feachRelatedData = async (id) => {
+    return await youtube.get('/search', {
+        params: {
+            ...params,
+            relatedToVideoId: id
         }
     })
 }
