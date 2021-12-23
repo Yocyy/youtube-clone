@@ -18,7 +18,6 @@ export const SideList = () => {
         })
     }
     useEffect(()=>{
-        console.log("globalState.selected", globalState.selected)
         if (globalState.selected)
             setRelatedVideo(globalState.selected.id)
     // eslint-disable-next-line react-hooks/exhaustive-deps

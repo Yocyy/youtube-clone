@@ -15,7 +15,6 @@ export const VideoDetail = () => {
         const id = searchParams.get('v');
         await feachSelectedData(id).then((res) => {
             const item = res.data.items.shift();
-            console.log(item);
             setGlobalState({type: 'SET_SELECTED', payload: {selected: item}});
         });
     };
