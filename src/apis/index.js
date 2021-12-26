@@ -40,3 +40,12 @@ export const feachRelatedData = async (id) => {
         }
     })
 }
+
+export const feachSearchdData = async (query) => {
+    return await youtube.get('/search', {
+        params: {
+            ...params,
+            q: query
+        }
+    })
+}
