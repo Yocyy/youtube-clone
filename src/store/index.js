@@ -1,5 +1,10 @@
+/*////////////////////////////////////////////////////////
+// API から受け取ったデータを格納し、グローバルステートとして提供する。
+*/////////////////////////////////////////////////////////
+
 import { createContext, useReducer } from "react";
 
+// グローバルステート初期値(state)
 const initialState = {
     popular: [],
     related: [],
@@ -8,6 +13,7 @@ const initialState = {
     term: ''
 }
 
+// 処理関数(dispatch)
 const reducer = (state, action) => {
     switch (action.type) {
         case 'SET_POPULAR':
@@ -25,11 +31,13 @@ const reducer = (state, action) => {
     }
 }
 
+// Storeインスタンス
 export const Store = createContext({
     globalState: initialState,
     setGlobalState: () => null
 });
 
+// 親要素から子要素(コンポーネント)にstateを継承。
 export const StoreProvider = ({ children }) => {
     const [globalState, setGlobalState] = useReducer(reducer, initialState)
     return (

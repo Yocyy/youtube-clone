@@ -1,3 +1,7 @@
+/*////////////////////////////////////////////////////////
+// Youtube Data API v3からデータを取得する
+*/////////////////////////////////////////////////////////
+
 import axios from "axios";
 
 const KEY = 'AIzaSyAldlWc1kacIeetQR1sue_PVhMRoz6T_cc';
@@ -6,6 +10,7 @@ const youtube = axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3'
 });
 
+// 共通パラメータ
 const params = {
     part: 'snippet',
     maxResults: 40,
@@ -14,6 +19,7 @@ const params = {
     type: 'video',
 }
 
+// 現在人気な動画データを返す。
 export const fetchPopularData = async () => {
     return await youtube.get('/videos', {
         params: {
@@ -23,6 +29,7 @@ export const fetchPopularData = async () => {
     })
 }
 
+// id:string 引数で指定した動画データを返す。
 export const feachSelectedData = async (id) => {
     return await youtube.get('videos', {
         params: {
@@ -32,6 +39,7 @@ export const feachSelectedData = async (id) => {
     })
 }
 
+// id:string 引数で指定した動画に関連する動画データを返す。
 export const feachRelatedData = async (id) => {
     return await youtube.get('/search', {
         params: {
@@ -41,6 +49,7 @@ export const feachRelatedData = async (id) => {
     })
 }
 
+// query:string 引数で指定した検索結果動画データを返す。
 export const feachSearchdData = async (query) => {
     return await youtube.get('/search', {
         params: {
