@@ -3,6 +3,10 @@ import { Store } from '../../store/index'
 import { SideListItem } from '../SideListItem/SideListItem'
 import Style from './SideList.module.scss'
 
+/*////////////////////////////////////////////////////////
+// SideList.js
+// 動画ページのサイドリストを構成する。
+*/////////////////////////////////////////////////////////
 export const SideList = () => {
     const { globalState} = useContext(Store)
 

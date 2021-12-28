@@ -6,6 +6,11 @@ import Style from './Header.module.scss'
 import { useHistory  } from 'react-router-dom'
 import { Store } from '../../store/index'
 
+/*////////////////////////////////////////////////////////
+// Header.js
+// ページ共通のヘッダーを構成する。
+*/////////////////////////////////////////////////////////
+
 export const Header = () => {
     const [term, setTerm] = useState('')
     const history = useHistory()
